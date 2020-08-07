@@ -1,0 +1,33 @@
+@import '../../../styles/config.scss';
+
+.Todo {
+	width: 100%;
+	.todo-title {
+		color:$main-text-color;
+		font-weight: bold;
+		font-size: 36px;
+		margin-top: 15px;
+		margin-left: 20px;
+		margin-bottom: 40px;
+	}
+	.panels-wrap {
+		display: flex;
+		.FillPanel, .CustomPanel {
+			box-shadow: $sample-box-shadow;
+			border-radius: 7px;
+		}
+	}
+
+	.todo-btn {
+		width: 200px;
+		height: 46px;
+		margin-top: 20px;
+		position: absolute;
+		top:530px;
+		right:40px;
+	}
+	.submit-btn {
+		width: 230px;
+		background-color: rgb(58, 129, 221);
+	}
+}

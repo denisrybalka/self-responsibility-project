@@ -1,0 +1,23 @@
+@import '../../../styles/_config.scss';
+
+.CreateTodo {
+	padding-left: 50px;
+	.createTodo-inner {
+		position: relative;
+		margin-left:25px;
+		margin-top: 15px;
+		font-weight: 500;
+		font-size: 18px;
+		cursor: pointer;
+		user-select:none;
+		&::before {
+			content: '';
+			position: absolute;
+			width: 24px;
+			height: 24px;
+			left:-25px;
+			top:-1px;
+			background-image:url('../../../assets/plus-icon.png')
+		}
+	}
+}

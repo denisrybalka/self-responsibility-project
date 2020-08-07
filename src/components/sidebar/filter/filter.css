@@ -1,0 +1,54 @@
+* {
+  font-family: "Montserrat", sans-serif;
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: #545454;
+}
+
+input, button, textarea {
+  outline: none;
+  border: none;
+}
+
+input:focus, button:focus, textarea:focus {
+  border: none;
+  outline: none;
+}
+
+.Filter {
+  width: 100%;
+  background-color: #fff;
+  height: 55px;
+  margin: 5px 0px 15px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: 500;
+  font-size: 18px;
+  color: #C2C2C2;
+  cursor: pointer;
+  padding-left: 75px;
+  background-image: url("../../../assets/filter-icon.png");
+  background-repeat: no-repeat;
+  background-position: 50px center;
+  background-size: 20px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.Filter img {
+  width: 24px;
+  height: 24px;
+}
+/*# sourceMappingURL=filter.css.map */

@@ -1,0 +1,119 @@
+@charset "UTF-8";
+* {
+  font-family: "Montserrat", sans-serif;
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: #545454;
+}
+
+input, button, textarea {
+  outline: none;
+  border: none;
+}
+
+input:focus, button:focus, textarea:focus {
+  border: none;
+  outline: none;
+}
+
+.main-btn {
+  background-color: #49DD9C;
+  color: #fff;
+  width: 163px;
+  height: 38px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 14px;
+  border: none;
+  -webkit-transition: linear 0.1s;
+  transition: linear 0.1s;
+}
+
+.main-btn:hover {
+  cursor: pointer;
+  background-color: #34d990;
+}
+
+.secondary-btn {
+  background-color: #F2F2F2;
+  color: #B3B3B3;
+  width: 163px;
+  height: 38px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 14px;
+  border: none;
+  -webkit-transition: linear 0.1s;
+  transition: linear 0.1s;
+}
+
+.secondary-btn:hover {
+  cursor: pointer;
+  background-color: #e5e5e5;
+}
+
+.sample-input {
+  border: 1px solid #DEDEDE;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 7px;
+  color: #8E8E8E;
+  font-weight: 500;
+  font-size: 14px;
+  padding-left: 10px;
+}
+
+.sample-input:focus {
+  border: 1px solid #DEDEDE;
+}
+
+.FillPanel {
+  width: 57%;
+  min-height: 430px;
+  margin: 0px 20px;
+  position: relative;
+}
+
+.FillPanel::before {
+  content: "Панель заполнения";
+  position: absolute;
+  top: -20px;
+  font-weight: normal;
+  font-size: 12px;
+  color: #C2C2C2;
+}
+
+.FillPanel .desc-title {
+  font-style: normal;
+  position: relative;
+  font-weight: 500;
+  font-size: 14px;
+  color: #545454;
+  padding: 10px 55px;
+}
+
+.FillPanel .desc-title::before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  left: 30px;
+  background-image: url("../../../assets/pencil-icon.png");
+  background-size: cover;
+}
+
+.FillPanel .desc-input {
+  display: block;
+  margin: 0 auto;
+  width: 90%;
+  height: 95px;
+  resize: none;
+  padding-top: 15px;
+}
+/*# sourceMappingURL=fillPanel.css.map */

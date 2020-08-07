@@ -1,0 +1,38 @@
+@import '../../../styles/_classes.scss';
+
+.CustomPanel {
+	width: 35%;
+	height: 430px;
+	position: relative;
+	@include pretitle-styles('Панель кастомизации');
+
+	.tags-title, .colors-title, .deadline-title,.time-title {
+		font-style: normal;
+		font-weight: 500;
+		font-size: 14px;
+		color:$main-text-color;
+		padding: 20px 30px 15px;
+	}
+	.tags-title {
+		@include custom-panel-icons('../assets/tag-icon.png');
+	}
+	.colors-title {
+		@include custom-panel-icons('../assets/color-icon.png');
+	}
+	.deadline-title {
+		@include custom-panel-icons('../assets/deadline-icon.png');
+	}
+
+	.time-title {
+		position: absolute;
+		bottom: 0px;
+	}
+	.tags-input {
+		display: flex;
+		align-items: center;
+		overflow: hidden;
+		margin: 0 auto;
+		width: 90%;
+		height: 50px;
+	}
+}

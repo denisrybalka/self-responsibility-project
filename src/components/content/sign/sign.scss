@@ -1,0 +1,14 @@
+@import '../../../styles/_config.scss';
+
+.Sign {
+	width: fit-content;
+	font-style: normal;
+	position: absolute;
+	top:50%;
+	left:50%;
+	transform:translate(-50%, -50%);
+	font-weight: 500;
+	font-size: 48px;
+	color: rgba(215, 215, 215, 0.5);
+	user-select:none;
+}

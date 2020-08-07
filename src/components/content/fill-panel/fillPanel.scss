@@ -1,0 +1,35 @@
+@import '../../../styles/_classes.scss';
+
+.FillPanel {
+			width: 57%;
+			min-height: 430px;
+			margin: 0px 20px;
+			
+			@include pretitle-styles('Панель заполнения');
+			.desc-title {
+				font-style: normal;
+				position: relative;
+				font-weight: 500;
+				font-size: 14px;
+				color:$main-text-color;
+				padding: 20px 55px 10px;
+				&::before {
+					content: '';
+					position: absolute;
+					width: 18px;
+					height: 18px;
+					left:33px;
+					background-image: url('../../../assets/pencil-icon.png');
+					background-size: cover;
+				}
+			}
+			.desc-input {
+				display: block;
+				margin: 0 auto;
+				width: 95%;
+				height: 105px;
+				line-height: 25px;
+				resize:none;
+				padding: 5px 10px;
+			}
+		}

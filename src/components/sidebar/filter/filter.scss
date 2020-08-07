@@ -1,0 +1,67 @@
+@import '../../../styles/_config.scss';
+
+.Filter {
+	width: 100%;
+	background-color:$main-page-color;
+	height: 55px;
+	margin: 5px 0px 15px 0px;
+	display: flex;
+	align-items: center;
+	font-weight: 500;
+	font-size: 18px;
+	color: $secondary-text-color;
+	cursor: pointer;
+	padding-left:75px;
+	background-image:url("../../../assets/filter-icon.png");
+	background-repeat: no-repeat;
+	background-position:50px center;
+	background-size:20px;
+	user-select: none;
+	.filter-item {
+		position: relative;
+		border:2px solid lighten($secondary-text-color, 13%);
+		border-radius:5px;
+		width: 22px;
+		height: 22px;
+		margin: 3px;
+		font-size: 10px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-weight: 700;
+		&::before {
+			opacity: 0;
+			visibility: hidden;
+			transition: .3s opacity, .3s visibility;
+			position: absolute;
+			font-weight: 500;
+			content: 'Показать все';
+			width: 150px;
+			top:-17px;
+			left:-20px;
+		}
+		&:hover {
+			&::before {
+				opacity: 1;
+				visibility: visible;
+			}
+		}
+	}
+	.filter-item:nth-child(1) {
+		margin-left: 20px;
+	}
+	.filter-item:nth-child(2) {
+		&::before {
+			content: "Показать выполненные";
+		}
+	}
+	.filter-item:nth-child(3) {
+		&::before {
+			content: "Показать недобавленные";
+		}
+	}
+	.current {
+		transition: 0.5s linear;
+		border:2px solid $main-btn-color;
+	}
+}

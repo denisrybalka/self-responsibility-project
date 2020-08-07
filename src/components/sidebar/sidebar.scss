@@ -1,0 +1,9 @@
+@import '../../styles/config';
+
+.Sidebar {
+	width: 27%;
+	position: relative;
+	height: 100vh;
+	background-color: $secondary-page-color;
+	box-shadow: $sample-box-shadow;
+}

@@ -1,0 +1,19 @@
+@import '../../../styles/config';
+
+.UserBlock {
+	height: 50px;
+	position: absolute;
+	right:50px;
+	display: flex;
+	align-items: center;
+	.auth {
+		margin-right: 20px;
+		font-weight: normal;
+		font-size: 18px;
+		color:$secondary-text-color;
+		cursor: pointer;
+		&:hover {
+			color:darken($secondary-text-color, 5%);
+		}
+	}
+}

@@ -1,0 +1,50 @@
+* {
+  font-family: "Montserrat", sans-serif;
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: #545454;
+}
+
+input, button, textarea {
+  outline: none;
+  border: none;
+}
+
+input:focus, button:focus, textarea:focus {
+  border: none;
+  outline: none;
+}
+
+.SidebarHeader {
+  padding: 15px 0px 20px 50px;
+}
+
+.SidebarHeader .all-tasks {
+  color: #545454;
+  position: relative;
+  margin-left: 25px;
+  font-weight: 500;
+  font-size: 18px;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.SidebarHeader .all-tasks::before {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  left: -25px;
+  top: -1px;
+  background-image: url("../../../assets/header-icon.png");
+}
+/*# sourceMappingURL=sidebarHeader.css.map */

@@ -1,0 +1,73 @@
+* {
+  font-family: "Montserrat", sans-serif;
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: #545454;
+}
+
+input, button, textarea {
+  outline: none;
+  border: none;
+}
+
+input:focus, button:focus, textarea:focus {
+  border: none;
+  outline: none;
+}
+
+.UserBlock {
+  height: 50px;
+  position: absolute;
+  right: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.UserBlock .login {
+  margin-right: 20px;
+  font-weight: normal;
+  font-size: 18px;
+  color: #C2C2C2;
+  cursor: pointer;
+}
+
+.UserBlock .login:hover {
+  color: #b5b5b5;
+}
+
+.UserBlock .settings {
+  position: relative;
+  width: 34px;
+  height: 34px;
+  border-radius: 60px;
+  background-image: url("../../../assets/settings-icon.png");
+  background-size: 24px;
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.12);
+          box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+}
+
+.UserBlock .settings::after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 5px;
+  right: -15px;
+  top: 50%;
+  margin-top: -2px;
+  background-image: url("../../../assets/Polygon 2.svg");
+  background-repeat: no-repeat;
+}
+/*# sourceMappingURL=userBlock.css.map */

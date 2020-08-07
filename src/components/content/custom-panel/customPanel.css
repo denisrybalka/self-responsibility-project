@@ -1,0 +1,140 @@
+@charset "UTF-8";
+* {
+  font-family: "Montserrat", sans-serif;
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: #545454;
+}
+
+input, button, textarea {
+  outline: none;
+  border: none;
+}
+
+input:focus, button:focus, textarea:focus {
+  border: none;
+  outline: none;
+}
+
+.main-btn {
+  background-color: #49DD9C;
+  color: #fff;
+  width: 163px;
+  height: 38px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 14px;
+  border: none;
+  -webkit-transition: linear 0.1s;
+  transition: linear 0.1s;
+}
+
+.main-btn:hover {
+  cursor: pointer;
+  background-color: #34d990;
+}
+
+.secondary-btn {
+  background-color: #F2F2F2;
+  color: #B3B3B3;
+  width: 163px;
+  height: 38px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 14px;
+  border: none;
+  -webkit-transition: linear 0.1s;
+  transition: linear 0.1s;
+}
+
+.secondary-btn:hover {
+  cursor: pointer;
+  background-color: #e5e5e5;
+}
+
+.sample-input {
+  border: 1px solid #DEDEDE;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 7px;
+  color: #8E8E8E;
+  font-weight: 500;
+  font-size: 14px;
+  padding-left: 10px;
+}
+
+.sample-input:focus {
+  border: 1px solid #DEDEDE;
+}
+
+.CustomPanel {
+  width: 35%;
+  height: 430px;
+  position: relative;
+}
+
+.CustomPanel::before {
+  content: "Панель кастомизации";
+  position: absolute;
+  top: -20px;
+  font-weight: normal;
+  font-size: 12px;
+  color: #C2C2C2;
+}
+
+.CustomPanel .tags-title, .CustomPanel .colors-title, .CustomPanel .deadline-title {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  color: #545454;
+  padding: 20px 30px 15px;
+}
+
+.CustomPanel .tags-title::after {
+  content: '';
+  position: absolute;
+  right: 20px;
+  width: 20px;
+  height: 20px;
+  background-size: cover;
+  background-image: url("../assets/tag-icon.png");
+}
+
+.CustomPanel .colors-title::after {
+  content: '';
+  position: absolute;
+  right: 20px;
+  width: 20px;
+  height: 20px;
+  background-size: cover;
+  background-image: url("../assets/color-icon.png");
+}
+
+.CustomPanel .deadline-title::after {
+  content: '';
+  position: absolute;
+  right: 20px;
+  width: 20px;
+  height: 20px;
+  background-size: cover;
+  background-image: url("../assets/deadline-icon.png");
+}
+
+.CustomPanel .tags-input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 auto;
+  width: 90%;
+  height: 50px;
+}
+/*# sourceMappingURL=customPanel.css.map */

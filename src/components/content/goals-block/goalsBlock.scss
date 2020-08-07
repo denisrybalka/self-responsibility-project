@@ -1,0 +1,32 @@
+@import '../../../styles/config.scss';
+
+.GoalBlock {
+	margin-bottom: 20px;
+	.goals-title {
+		padding: 25px 55px 0px;
+		font-weight: 500;
+		font-size: 14px;
+		color:$main-text-color;
+		@include icon-styles(url('../assets/goal-icon.png'));
+	}
+	.create-goal {
+		padding: 10px 55px;
+		font-weight: 500;
+		font-size: 14px;
+		color:#929292;
+		cursor: pointer;
+		user-select: none;
+		margin: 15px 0px;
+		@include icon-styles(url('../assets/addgoal-icon.png'));
+	}
+	.create-input {
+	width: 90%;
+	height: 50px;
+	display: block;
+	margin: 0 auto;
+	margin-bottom: 10px;
+	}
+	.create-btn {
+		margin: 0px 10px 20px 30px;
+	}
+}

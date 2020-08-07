@@ -1,0 +1,78 @@
+@import '../../../styles/config';
+
+.TodoItem {
+	width: 100%;
+	height: 61px;
+	border-radius: 10px;
+	padding-left: 40px;
+	display: flex;
+	align-items: center;
+	user-select: none;
+	.item-color {
+		width: 15px;
+		height: 15px;
+		border-radius:60px;
+		background-color:#fff;
+	}
+	.item-text {
+		padding-left: 10px;
+		display: flex;
+		font-weight: normal;
+		font-size: 18px;
+		color:$main-text-color;
+	}
+	.item-goals {
+		opacity: 0;
+		visibility: hidden;
+		transition: .2s opacity, .2s visibility;
+		position: absolute;
+		right:60px;
+		&::before {
+			content: '';
+			position: absolute;
+			left:30px;
+			width: 20px;
+			height: 20px;
+			border-radius: 60px;
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-size: 50% 50%;
+			background-color: $main-btn-color;
+			background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+		}
+	}
+	.item-goal-low {
+		&::before {
+			background-color: #DD4949;
+		}
+	}
+	.item-goal-premedium {
+		&::before {
+			background-color: #DDCE49;
+		}
+	}
+	.item-goal-medium {
+		&::before {
+			background-color:#C8DD49;
+		}
+	}
+
+
+	&:hover {
+		cursor: pointer;
+		transition: $btn-transition;
+		background-color: #fff;
+		box-shadow: 1px 1px 15px rgba(115, 115, 115, 0.05);
+		@include close-item-styles(15px, inherit);
+		.item-goals {
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+
+}
+
+
+	.active {
+	  box-shadow: inset 0 0 0 5px darken(white,5%);
+	}
