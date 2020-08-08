@@ -18,6 +18,7 @@ Basically my application is pretty similar to the usual *todo-app*. But I did it
 - **Inksape** (for icons)
 - **React JS**
 - **react-router-dom**
+- **scss**
 
 ## How can you get it?
 
