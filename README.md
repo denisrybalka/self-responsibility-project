@@ -1,6 +1,6 @@
 # Self-responisibility project
 
-![image](https://imgur.com/a/wmvVmHW)
+![image](https://i.imgur.com/43e6Smd.png)
 ## What technologies have I used?
 
 - **Figma**
