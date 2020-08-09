@@ -1,34 +1,32 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 
 import './goalsBlock.scss'
 
 import Goal from '../goal/goal.js'
-import InputGoal from'../input-goal/input-goal.js'
 
 
-class GoalsBlock extends React.Component {
 
-	state = {
-		visible: false,
+const GoalsBlock = ({goalsList,onGoalAdded, parentIdx, isReady, checkGoal,deleteGoal}) => {
+
+	const [isVisible,setVisible] = useState(false);
+	const [input, setInput] = useState('');
+	const [value,setValue] = useState(0);
+
+	useEffect(() => {
+		setValue(parentIdx);
+		if (value !== parentIdx) {
+			setInput('');
+			setVisible(false);
+		}
+	},[parentIdx,value]);
+
+	const createGoal = (e) => {
+		e.preventDefault();
+		onGoalAdded(input,parentIdx);
+		setInput('');
 	}
 
-	maxId = 0;
 
-
-	showInput = () => {
-		this.setState(({visible}) => {
-			return {
-				visible: !visible
-			}
-		})
-	}
-
-  render() {
-  	const {goalsList,onGoalAdded, parentIdx, isReady, checkGoal,deleteGoal} = this.props;
-  	const {visible} = this.state;
-	const {showInput} = this;
-
- 
   	const mappedGoals = !!goalsList &&
 	  	goalsList.map(el =>
 	  		<Goal
@@ -41,19 +39,6 @@ class GoalsBlock extends React.Component {
 				deleteGoal={deleteGoal}
 	  		/>
 		  );
-		  
-	const RenderInput = () => {
-		if (visible) {
-		  return (
-			<InputGoal
-				showInput={showInput}
-				onGoalAdded={onGoalAdded}
-				parentIdx={parentIdx}
-			/>
-		  )
-		}
-		return null;
-	}
 
   	return (
 	    <div className="GoalBlock">
@@ -61,20 +46,30 @@ class GoalsBlock extends React.Component {
 
 			{goalsList ? mappedGoals : null}
 
-			{isReady ? null :
-			  <>
+			{!isReady ? 
 				<div
 					className="create-goal"
-					onClick={showInput}>
+					onClick={setVisible}>
 					Добавить новую цель
-				</div>
-				<RenderInput/>
-			  </>
+				</div> : null
+			}
+			{isVisible && !isReady ?
+				<form onSubmit={(e) => createGoal(e)}>
+					<input
+						className="create-input sample-input"
+				    	placeholder="Текст цели"
+				    	value={input}
+				    	onChange={e => setInput(e.target.value)}
+				    	required minLength="3" maxLength="45"
+				    />
+
+				    <button className="create-btn main-btn">Добавить цель</button>
+				    <button className="secondary-btn" onClick={() => setVisible(!isVisible) }>Отмена</button>
+				</form> : null
 			}
 
 	    </div>
 	  )
   }
-}
 
 export default GoalsBlock;

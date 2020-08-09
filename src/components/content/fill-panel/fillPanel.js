@@ -4,8 +4,9 @@ import './fillPanel.scss'
 
 import GoalsBlock from '../goals-block/goalsBlock.js'
 
-const FillPanel = ({getDescription, idx, desc, goalsList, onGoalAdded, parentIdx, isReady,checkGoal,deleteGoal}) => {
+const FillPanel = ({getDescription,idx,onGoalAdded,parentIdx,checkGoal,deleteGoal,currentTodo}) => {
 
+	const {desc,isReady,goals} = currentTodo;
 
 	const SampleDiv = () => {
 		return (
@@ -30,7 +31,7 @@ const FillPanel = ({getDescription, idx, desc, goalsList, onGoalAdded, parentIdx
 		}
 
 		<GoalsBlock
-			goalsList={goalsList}
+			goalsList={goals}
 			onGoalAdded={onGoalAdded}
 			parentIdx={parentIdx}
 			idx={idx}

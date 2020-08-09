@@ -9,7 +9,7 @@ import Todo from './todo/todo.js';
 import ErrorBoundary from '../errorBoundary/error';
 import Authentication from './authentication'
 
-const Content = ({getDescription, todos, currentTodoId , onGoalAdded,setColor,submitTodo,modalToggle, checkGoal, deleteGoal}) => {
+const Content = ({getDescription,todos,currentTodoId,onGoalAdded,setColor,submitTodo,modalToggle,checkGoal,deleteGoal}) => {
 
   return (
     <div className="Content">
@@ -40,8 +40,8 @@ const Content = ({getDescription, todos, currentTodoId , onGoalAdded,setColor,su
 					</ErrorBoundary>
 				  );
 			    }}/>
-			<Route path="/login" component={Authentication}/>
-			<Route path="/register" component={Authentication}/>
+			<Route path="/login" render={() => <Authentication page="login"/>}/>
+			<Route path="/register" render={() => <Authentication page="register"/>}/>
 	    </Switch>
     </div>
   )

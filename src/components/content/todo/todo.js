@@ -5,14 +5,14 @@ import './todo.scss'
 import FillPanel from '../fill-panel/fillPanel.js'
 import CustomPanel from '../custom-panel/customPanel.js'
 
-const Todo = ({todos, getDescription,currentTodoId, onGoalAdded, setColor,checkGoal,modalToggle,deleteGoal}) => {
+const Todo = ({todos,getDescription,currentTodoId,onGoalAdded,setColor,checkGoal,modalToggle,deleteGoal}) => {
 
   const idx = todos.findIndex(todo => todo.id === currentTodoId);
   const currentTodo = todos[idx];
 
   let btnStyle = "todo-btn main-btn submit-btn";
 
-  if (currentTodo.done) {
+  if (currentTodo.isDone) {
     btnStyle = "todo-btn main-btn";
   }
 
@@ -23,33 +23,38 @@ const Todo = ({todos, getDescription,currentTodoId, onGoalAdded, setColor,checkG
 
         <FillPanel
           getDescription={getDescription}
-          desc={currentTodo.desc}
           idx={idx}
-          goalsList={currentTodo.goals}
           onGoalAdded={onGoalAdded}
           parentIdx={idx}
-          isReady={currentTodo.ready}
           checkGoal={checkGoal}
           deleteGoal={deleteGoal}
+          currentTodo={currentTodo}
         />
 
         <CustomPanel
           getDescription={getDescription}
-          tags={currentTodo.tags}
           idx={idx}
           setColor={setColor}
-          isReady={currentTodo.ready}
-          todoColor={currentTodo.color}
-          date={currentTodo.date}
+          currentTodo={currentTodo}
         />
 
       </div>
-      {currentTodo.ready ?
-      <button className={btnStyle} onClick={() => currentTodo.done ? null : modalToggle("setDone")}>{currentTodo.done ? "Выполнено" : "Подтвердить выполнение"}</button> :
-      <button className="todo-btn main-btn" onClick={() => modalToggle("submit")}>Добавить задачу</button>
+
+      {currentTodo.isReady ?
+        <button
+          className={btnStyle}
+          onClick={() => currentTodo.isDone ? null : modalToggle("setDone")}>
+          {currentTodo.isDone ? "Выполнено" : "Подтвердить выполнение"}
+        </button> :
+        
+        <button
+          className="todo-btn main-btn"
+          onClick={() => modalToggle("submit")}>
+          Добавить задачу
+        </button>
       }
     </div>
-    )
+  )
 }
 
 export default Todo;

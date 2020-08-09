@@ -1,4 +1,4 @@
-import React, { Component} from 'react';
+import React from 'react';
 
 import CreateNameForm from './create-name-form'
 import SetDoneForm from './set-done-form'
@@ -7,78 +7,49 @@ import SubmitTodoForm from './submit-todo-form'
 
 import './modal-window.scss'
 
-class Modal extends Component {
+const Modal = ({createTodo,modalToggle,modalInfo,deleteTodo,submitTodo,setDone,currentTodoId}) => {
+    return (
+        <div>
+          <div className="modal-window">
 
-	state = {
-		name: '',
-	}
+		  	<div className="modal-close" onClick={modalToggle}></div>
 
-	changeName = (e) => {
-		this.setState({
-			name: e.target.value
-		})
-	}
+			{modalInfo === "create" ?
+				<CreateNameForm
+					createTodo={createTodo}
+					modalToggle={modalToggle}
+				/>
+			: null}
 
-	nameSubmit = (e) => {
-		e.preventDefault();
-		
-		const {name} = this.state;
-		const {createTodo} = this.props;
+			{modalInfo === "delete" ?
+				<DeleteTodoForm
+					deleteTodo={deleteTodo}
+					modalToggle={modalToggle}
+					currentTodoId={currentTodoId}
+				/>
+			: null}
 
-		createTodo(e, name);
-		this.setState({
-			name: '',
-		});
-	}
+			{modalInfo === "submit" ?
+				<SubmitTodoForm
+					submitTodo={submitTodo}
+					modalToggle={modalToggle}
+					currentTodoId={currentTodoId}
+				/>
+			: null}
 
-    render() {
-    	const {changeName, nameSubmit} = this;
-    	const {name} = this.state;
-    	const {modalToggle,modalInfo,deleteTodo,submitTodo,setDone,currentTodoId} = this.props;
+			{modalInfo === "setDone" ?
+				<SetDoneForm
+					setDone={setDone}
+					modalToggle={modalToggle}
+					currentTodoId={currentTodoId}
+				/>
+			: null}
 
-        return (
-            <>
-              <div className="modal-window">
-				  	<div className="modal-close" onClick={modalToggle}></div>
+          </div>
 
-					{modalInfo === "create" ?
-						<CreateNameForm
-							nameSubmit={nameSubmit}
-							name={name}
-							changeName={changeName}
-							modalToggle={modalToggle}
-						/>
-					: null}
-
-					{modalInfo === "delete" ?
-						<DeleteTodoForm
-							deleteTodo={deleteTodo}
-							modalToggle={modalToggle}
-							currentTodoId={currentTodoId}
-						/>
-					: null}
-
-					{modalInfo === "submit" ?
-						<SubmitTodoForm
-							submitTodo={submitTodo}
-							modalToggle={modalToggle}
-							currentTodoId={currentTodoId}
-						/>
-					: null}
-
-					{modalInfo === "setDone" ?
-						<SetDoneForm
-							setDone={setDone}
-							modalToggle={modalToggle}
-							currentTodoId={currentTodoId}
-						/>
-					: null}
-
-            	</div>
-			  <div className="modal-overlay" onClick={modalToggle}></div>
-            </>
-        );
-    }
+		  <div className="modal-overlay" onClick={modalToggle}></div>
+        </div>
+    );
 }
 
 export default Modal;

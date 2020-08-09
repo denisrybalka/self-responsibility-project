@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 import './todo-item.scss'
 
 const TodoItem = ({todo, modalToggle, setCurrentTodoId}) => {
-	const {name, ready, done, color, id, goals} = todo;
+	const {name, isReady, isDone, color, id, goals} = todo;
 	const goalCount = goals.length;
 	const goalDone = goals.filter(goal => goal.done).length;
 
@@ -28,14 +28,14 @@ const TodoItem = ({todo, modalToggle, setCurrentTodoId}) => {
 		itemGoalsStyle = "item-goals"
 	}
 
-  	const bgc = ready ? null : "#ffffcc";
+  	const bgc = isReady ? null : "#ffffcc";
 
   return (
 	<Link key={id} to={`/todo-item/${id}`}>
-	    <div className="TodoItem" onClick={() => setCurrentTodoId(id)} style={{backgroundColor:`${done ? "#49DD9C" : bgc}`}}>
+	    <div className="TodoItem" onClick={() => setCurrentTodoId(id)} style={{backgroundColor: isDone ? "#49DD9C" : bgc}}>
 	    	<div className="item-color" style={{backgroundColor:`${color}`}}></div>
-  			<div className="item-text" style={done ? {color:"#fff"} : null}>{dottedName}</div>
-			{done || !ready ? null : <div className={itemGoalsStyle}>{`${goalDone}/${goalCount}`}</div>}
+  			<div className="item-text" style={isDone ? {color:"#fff"} : null}>{dottedName}</div>
+			{isDone || !isReady ? null : <div className={itemGoalsStyle}>{`${goalDone}/${goalCount}`}</div>}
 		    <div className="item-delete" onClick={() => modalToggle("delete")}></div>
 	    </div>
 	</Link>

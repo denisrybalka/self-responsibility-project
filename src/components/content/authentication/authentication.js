@@ -1,12 +1,11 @@
 import React from 'react'
-import {createBrowserHistory} from 'history'
 import {Link} from 'react-router-dom'
 
 import './authentication.scss';
 
-const Authentication = () => {
-    const history = createBrowserHistory();
-    const authPage = history.location.pathname === "/login";
+const Authentication = ({page}) => {
+
+    const authPage = page === "login";
 
     const linkStyle = {
         color:"#C2C2C2",

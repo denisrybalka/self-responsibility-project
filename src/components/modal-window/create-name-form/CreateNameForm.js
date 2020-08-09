@@ -1,15 +1,18 @@
-import React from 'react';
+import React, {useState} from 'react';
 
-const CreateNameForm = ({nameSubmit,name,changeName,modalToggle}) => {
+const CreateNameForm = ({createTodo, modalToggle}) => {
+
+  const [name,setName] = useState('');
+
     return (
       <>
       <div className="modal-title">Создать новую задачу?</div>
-      <form className="modal-form" onSubmit={(e) => nameSubmit(e)}> 
+      <form className="modal-form" onSubmit={(e) => createTodo(e,name)}> 
           <input
               className="sample-input"
               placeholder="Придумайте название"
               value={name}
-              onChange={changeName}
+              onChange={e => setName(e.target.value)}
               required
               maxLength="25"
               autoFocus={true}

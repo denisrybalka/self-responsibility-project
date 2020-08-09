@@ -2,8 +2,10 @@ import React from 'react';
 import './customPanel.scss'
 import ColorPalette from '../color-palette/colorPalette'
 
-const CustomPanel = ({getDescription, tags, idx, setColor, isReady, todoColor,date}) => {
-  
+const CustomPanel = ({getDescription,idx,setColor,currentTodo}) => {
+
+  const {tags,isReady,color,date} = currentTodo;
+
   const TagsDiv = () => {
     return (
       <div className="tags-input sample-input">
@@ -32,7 +34,7 @@ const CustomPanel = ({getDescription, tags, idx, setColor, isReady, todoColor,da
           setColor={setColor}
           idx={idx}
           isReady={isReady}
-          todoColor={todoColor}
+          todoColor={color}
         />     
 
         <div className="deadline-title">Таймер выполнения</div> 

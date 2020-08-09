@@ -1,7 +1,6 @@
 import React from 'react';
 
 const DeleteTodoForm = ({deleteTodo,modalToggle,currentTodoId}) => {
-  
     return (
       <>
         <div className="modal-title">Удалить задачу?</div>
@@ -11,7 +10,7 @@ const DeleteTodoForm = ({deleteTodo,modalToggle,currentTodoId}) => {
             <button className="secondary-btn"
                     onClick={modalToggle}>Отмена</button>
         </form>
-    </>
+      </>
   )
 }
 

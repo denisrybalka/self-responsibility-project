@@ -10,7 +10,7 @@ const SubmitTodoForm = ({submitTodo,modalToggle,currentTodoId}) => {
         <button className="secondary-btn"
             onClick={modalToggle}>Отмена</button>
       </form>
-  </>
+    </>
   )
 }
 
