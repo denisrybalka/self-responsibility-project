@@ -38,9 +38,9 @@ class Sidebar extends React.Component{
 	filter = (todos,filter) => {
 		switch(filter) {
 			case 'D' :
-				return todos.filter((item) => item.done);
+				return todos.filter((item) => item.isDone);
 			case 'R' : 
-				return todos.filter((item) => !item.ready);
+				return todos.filter((item) => !item.isReady);
 			default :
 				return todos;
 		}

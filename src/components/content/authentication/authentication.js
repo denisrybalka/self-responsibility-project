@@ -39,7 +39,7 @@ const Authentication = ({page}) => {
                 <div className="auth-title">{authPage ? "Вход" : "Регистрация"}</div>
                 <div className="auth-ask">{authPage ? <LoginAsk/> : <RegisterAsk/>}</div>
 
-                <label for="login">Login</label>
+                <label htmlFor="login">Login</label>
                 <input
                     className="sample-input auth-input"
                     id="login"
@@ -49,7 +49,7 @@ const Authentication = ({page}) => {
 
                 {!authPage ?
                 <div>
-                    <label for="email" style={{display:"block"}}>Email</label>
+                    <label htmlFor="email" style={{display:"block"}}>Email</label>
                     <input
                         className="sample-input auth-input"
                         id="email"
@@ -58,7 +58,7 @@ const Authentication = ({page}) => {
                     />
                 </div> : null }
 
-                <label for="password">Password</label>
+                <label htmlFor="password">Password</label>
                 <input
                     className="sample-input auth-input"
                     id="password"

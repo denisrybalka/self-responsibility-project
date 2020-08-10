@@ -70,7 +70,7 @@ class App extends Component {
 	}
 
 	createTodo = (e,name) => {
-		e.preventDefault()
+		e.preventDefault();
 
 		this.setState(({todos}) => {
 			const newArray = [

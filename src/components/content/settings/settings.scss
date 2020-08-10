@@ -1,32 +1,8 @@
 @import '../../../styles/config';
 
-.settings {
-    position: relative;
-    width: 34px;
-    height: 34px;
-    border-radius:60px;
-    background-image: url('../../../assets/settings-icon.png');
-    background-size:24px;
-    background-repeat: no-repeat;
-    background-position:center;
-    box-shadow: $sample-box-shadow;
-    cursor: pointer;
-    &::after {
-        content: '';
-        position: absolute;
-        width: 10px;
-        height: 5px;
-        right:-15px;
-        top:50%;
-        margin-top:-2px;
-        background-image:url('../../../assets/Polygon 2.svg');
-        background-repeat: no-repeat;
-    }
-}
-
 .settings-panel {
     position: absolute;
-    margin-top: 10px;
+    top:50px;
     right:-15px;
     width: 160px;
     min-height: 150px;

@@ -16,4 +16,27 @@
 			color:darken($secondary-text-color, 5%);
 		}
 	}
+	.settings {
+    position: relative;
+    width: 34px;
+    height: 34px;
+    border-radius:60px;
+    background-image: url('../../../assets/settings-icon.png');
+    background-size:24px;
+    background-repeat: no-repeat;
+    background-position:center;
+    box-shadow: $sample-box-shadow;
+    cursor: pointer;
+    &::after {
+        content: '';
+        position: absolute;
+        width: 10px;
+        height: 5px;
+        right:-15px;
+        top:50%;
+        margin-top:-2px;
+        background-image:url('../../../assets/Polygon 2.svg');
+        background-repeat: no-repeat;
+    }
+}
 }

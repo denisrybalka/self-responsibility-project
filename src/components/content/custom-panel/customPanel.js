@@ -31,7 +31,7 @@ const CustomPanel = ({getDescription,idx,setColor,currentTodo}) => {
         <div className="colors-title">Изменить цвет задания</div>
 
         <ColorPalette
-          setColor={setColor}
+          changeColor={setColor}
           idx={idx}
           isReady={isReady}
           todoColor={color}
@@ -39,7 +39,7 @@ const CustomPanel = ({getDescription,idx,setColor,currentTodo}) => {
 
         <div className="deadline-title">Таймер выполнения</div> 
         <div className="deadline-title">Выполнить задачу до:</div>
-        {isReady ? <div className="time-title">Дата создания:<br/> {date}</div> : null}
+        {isReady ? <div className="time-title">Дата создания:<br/>{date}</div> : null}
     </div>
   )
 }

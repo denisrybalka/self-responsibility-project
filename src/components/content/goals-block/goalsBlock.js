@@ -16,7 +16,6 @@ const GoalsBlock = ({goalsList,onGoalAdded, parentIdx, isReady, checkGoal,delete
 		setValue(parentIdx);
 		if (value !== parentIdx) {
 			setInput('');
-			setVisible(false);
 		}
 	},[parentIdx,value]);
 
